@@ -43,7 +43,7 @@ def update():
                 (soil_moist, username)
             )
             db.commit()
-            return
+            return "okay"
 
         flash(error)
 

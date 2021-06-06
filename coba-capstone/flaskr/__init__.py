@@ -33,12 +33,16 @@ def create_app(test_config=None):
     from . import sensor
     app.register_blueprint(sensor.bp)
 
+    from . import data
+    app.register_blueprint(data.bp)
+
     # a simple page that says hello
-    @app.route('/hello')
+    @app.route('/')
     def hello():
-        return 'Hello, World!'
+        return 'Hello!'
 
     return app
+
 
 if __name__ == '__main__':
     app = create_app()
