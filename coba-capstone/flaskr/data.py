@@ -40,5 +40,5 @@ def single_user(username):
     data['username'] = user['username']
     data['temperature'] = user['temperature']
     data['humidity'] = user['humidity']
-    data['soil moisture'] = user['soil_moist']
+    data['soilMoisture'] = user['soil_moist']
     return jsonify(data)
