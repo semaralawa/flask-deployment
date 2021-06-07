@@ -10,9 +10,11 @@ CREATE TABLE user (
 CREATE TABLE sensor (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   username TEXT UNIQUE NOT NULL,
-  temperature TEXT NOT NULL,
-  humidity TEXT NOT NULL,
-  soil_moist TEXT NOT NULL
+  temperature FLOAT,
+  humidity FLOAT,
+  soil_moist FLOAT,
+  lamp TEXT NOT NULL,
+  pump TEXT NOT NULL
 );
 
 CREATE TABLE post (

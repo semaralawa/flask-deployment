@@ -44,8 +44,8 @@ def register():
                 (username, generate_password_hash(password))
             )
             db.execute(
-                'INSERT INTO sensor (username, temperature, humidity, soil_moist) VALUES (?, ?, ?, ?)',
-                (username, 0, 0, 0)
+                'INSERT INTO sensor (username, temperature, humidity, soil_moist, lamp, pump) VALUES (?, ?, ?, ?, ?, ?)',
+                (username, 0, 0, 0, 'off', 'off')
             )
             db.commit()
             return redirect(url_for('auth.login'))

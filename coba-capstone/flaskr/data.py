@@ -26,9 +26,9 @@ def all_user():
 
 @bp.route('/all_sensor')
 def all_sensor():
-    data = 'username\ttemperature\thumidity\tsoil moisture\n'
+    data = 'username\ttemperature\thumidity\tsoil moisture\tlamp state\tpump state\n'
     for user in query_db('select * from sensor'):
-        data += f"{user['username']}\t\t{user['temperature']}\t\t{user['humidity']}\t\t{user['soil_moist']}\n"
+        data += f"{user['username']}\t\t{user['temperature']}\t\t{user['humidity']}\t\t{user['soil_moist']}\t\t{user['lamp']}\t\t{user['pump']}\n"
     return (render_template('content.html', text=data))
 
 
