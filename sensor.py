@@ -126,8 +126,17 @@ def button_params(username, button, state):
 
 
 @bp.route('/get-button/user=<username>/button=<button>')
-def get_button(username, button):
+def get_one_button(username, button):
     user = query_db('select * from sensor where username = ?',
                     [username], one=True)
     data = user[button]
     return data
+
+@bp.route('/get-button/user=<username>')
+def get_button(username):
+    data = {}
+    user = query_db('select * from sensor where username = ?',
+                    [username], one=True)
+    data['lamp'] = user['lamp']
+    data['pump'] = user['pump']
+    return jsonify(data)
